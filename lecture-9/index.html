@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lecture-9</title>
+    <link
+      rel="icon"
+      href="http://actualidadradio.com/favicon.ico/android-icon-144x144.png"
+      type="image/x-icon"
+    />
+  <style>
+    .border{
+      border:1px solid #aaa;
+      padding: 1rem;
+      margin: 1rem;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="border">
+      <h3>Подсчет суммы</h3>
+      <input type="text" id="myInput" />
+      <input type="text" id="myInput2" /><br><br>
+      <button type="button" id="button">Сложить</button>
+      <p id="sum"></p>
+    </div>
+      <div class="border">
+        <h3>Положительное или отриательное</h3>
+        <input type="text" id="myInput3" /><br><br>
+        <button type="button" id="button1">Сложить</button>
+        <p id="posit"></p>
+      </div>
+
+    <div class="border">
+      <h3>Четное не четное</h3>
+    <input type="text" id="chet1" /><br />
+    <button type="button" id="button2">button</button>
+    <p id="num"></p>
+  </div>
+    <div class="border">
+      <h3>Арифметические действия</h3>
+      <input type="text" id="num1" />
+      <input type="text" id="num2" /><br><br>
+      <button type="button" id="calc">Посчитать</button>
+      <p id="plus"></p>
+      <p id="minus"></p>
+      <p id="division"></p>
+      <p id="multiplic"></p>
+    </div>
+    <div class="border">
+      <h3>Подсчет процента жира</h3>
+      <label for="rost">Рост, см.</label><br>
+      <input type="text" id="rost" name="rost"><br><br>
+      <label for="okr">Окружность талии, см.</label><br>
+      <input type="text" id="okr" name="okr">     <br><br> 
+      <label for="gender">Пол</label><br>
+      <select  name="gender" id="gender">
+        <option value="man">Мужчина</option>
+        <option value="woman">Женщина</option>
+       </select><br><br>
+       <button type="button" id="getFat">Подсчитать жирность</button>
+       <p id="fatResult"></p>
+      </div>
+  </body>
+  <script src="app.js"></script>
+</html>
