@@ -94,23 +94,26 @@ function dividers(){
     let arr=[]; //создаем массив
 
     //цикл по нахождению делителей
-    while (i<inputDividersValue-1){
-        ++i;
+    while (i<inputDividersValue-1){ // отнимаем 1 чтобы не включать само число
+        ++i; 
         //условие если делиться без остатка
         if(inputDividersValue%i===0){
             arr[0+a]=i;// записываем в массив
             ++a;
         }
-
     }
     let str = arr.join(', '); //соединяем массив через запятую
 
-    elementParagraph.textContent=str; //вставляем массив в абзац
-        
+    // условие если массив пустой
+    if(arr.length===0){
+        elementParagraph.textContent='Простое число'; //вставляем в абзац  
+    } else{    
+        elementParagraph.textContent=str; //вставляем массив в абзац  
+    }
+
     res3.append(elementParagraph); // вставляем в див с id res3
 
 }
-
 button4.addEventListener('click', dividers);
 
 
@@ -127,15 +130,64 @@ function summa(){
 
     let i=1;
     let a=0;
-    //цикл по нахождению суммы
+    //цикл по нахождению суммы пока i не больше числа
     while (i<=inputChisloValue){
-        a+=i;
+        a+=i; // к переменной a прибавляем i и записываем
         ++i;
     }   
-
-    elementParagraph.textContent=a; //вставляем в абзац        
+    elementParagraph.textContent=a; //вставляем в абзац итог       
     res4.append(elementParagraph); // вставляем в див с id res4
+}
+button5.addEventListener('click', summa);
+
+
+
+/* Сумма квадратов всех чисел */
+
+let inputChislo2 = document.querySelector('#inputChislo2');
+let res5 = document.querySelector('#res5');
+
+function quad(){
+    let inputChislo2Value=Number(inputChislo2.value);
+    let elementParagraph = document.createElement('p'); //создаем абзац
+    
+    let a=0;   
+    let b;
+    let i=1;      
+    while(i<=inputChislo2Value){
+        b = i*i; // записываем результат квадрата числа
+        a += b; // записываем и суммируем с предыдущим результатом
+        ++i;
+    }
+
+    elementParagraph.textContent=a; //вставляем в абзац результат     
+    res5.append(elementParagraph); // вставляем в див с id res5
+}
+button6.addEventListener('click',quad);
+
+
+
+/* Проверка числа на простоту */
+
+let inputChislo3 = document.querySelector('#inputChislo3');
+let res6 = document.querySelector('#res6');
+
+function prostota(){ 
+    let inputChislo3Value=Number(inputChislo3.value);
+    let elementParagraph = document.createElement('p'); //создаем абзац
+
+    let i=1;
+    while(i<inputChislo3Value){
+        ++i;
+        // условие если нет остатка или индекс равен числу пользователя(для двойки)
+        if(inputChislo3Value%i!==0 || inputChislo3Value===i ){
+            elementParagraph.textContent='Простое число'; 
+        } else{
+            elementParagraph.textContent='Непростое число'; 
+            break;//прерываем цикл при первом же исполнении
+        }
+    }    
+    res6.append(elementParagraph); // вставляем в див с id res6
 
 }
-
-button5.addEventListener('click', summa);
+button7.addEventListener('click', prostota);
